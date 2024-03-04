@@ -107,17 +107,38 @@ puts my_string.delete('s')
 
 # .index
 puts my_string.index('r')
+
 # .swapcase
 puts my_string.swapcase
+
 # Create an array that contains the name of at least five TV shows you enjoy.
-my_tvshows_array = ["Ted Lasso", "The Boys", "The masters of the air", "The office", "bob's burger"]
+my_tvshows = ["Ted Lasso", "The Boys", "The masters of the air", "The office", "bob's burger"]
 
 # Find the length of the array.
+puts my_tvshows.length
+
 # Return the first item in the array.
+puts my_tvshows.first
+
 # Return the fourth item in the array.
+puts my_tvshows[3]
+
 # Permanently reverse the order of the array.
+my_tvshows.reverse!
+puts my_tvshows
+
 # Create a new empty array for your top favorite TV shows.
+puts my_tvshows_new = []
+
+#-------------------------
 # Using the full TV show array, add your top two favorite shows to the empty array.
+# puts my_tvshows_new = my_tvshows [0] + " " + my_tvshows [1]
+
+my_tvshows_new.push(my_tvshows[0], my_tvshows[1])
+puts my_tvshows_new
+
+
+
 
 
 
