@@ -53,32 +53,32 @@
 # As a user, I can see a message in the terminal depicting which user won the round.
 # As a user, I can see a message in the terminal noting if there was a tie.
 
-puts 'enter player one user_name'
-user_one = gets.chomp
-# p user_one
+# puts 'enter player one user_name'
+# user_one = gets.chomp
+# # p user_one
 
-puts 'enter player two user_name'
-user_two = gets.chomp
-# p user_two
+# puts 'enter player two user_name'
+# user_two = gets.chomp
+# # p user_two
 
-puts "#{user_one} choose between rock, paper, or scissors"
-user_one_selection = gets.chomp
+# puts "#{user_one} choose between rock, paper, or scissors"
+# user_one_selection = gets.chomp
 
-puts "#{user_two} choose between rock, paper, or scissors"
-user_two_selection = gets.chomp
+# puts "#{user_two} choose between rock, paper, or scissors"
+# user_two_selection = gets.chomp
 
-def game_outcome (user_one, user_one_selection, user_two, user_two_selection)
-  if user_one_selection == user_two_selection
-    'tie game'
-  elsif user_one_selection == 'rock' && user_two_selection == 'scissors' ||
-      user_one_selection == 'scissors' && user_two_selection == 'paper' ||
-      user_one_selection == 'paper' && user_two_selection == 'rock'
-          "#{user_one}  wins"
-  else 
-      "#{user_two} wins"
-  end
-end 
-p game_outcome(user_one, user_one_selection, user_two, user_two_selection)
+# def game_outcome (user_one, user_one_selection, user_two, user_two_selection)
+#   if user_one_selection == user_two_selection
+#     'tie game'
+#   elsif user_one_selection == 'rock' && user_two_selection == 'scissors' ||
+#       user_one_selection == 'scissors' && user_two_selection == 'paper' ||
+#       user_one_selection == 'paper' && user_two_selection == 'rock'
+#           "#{user_one}  wins"
+#   else 
+#       "#{user_two} wins"
+#   end
+# end 
+# p game_outcome(user_one, user_one_selection, user_two, user_two_selection)
 
 # ✅ Challenge: Password Checker
 # As a developer, you have been tasked with creating the user registration for a secure web site. To test your code, enter the user ID and password in the terminal to find out if they are acceptable. The user ID and password must adhere to the to following criteria:
@@ -89,3 +89,56 @@ p game_outcome(user_one, user_one_selection, user_two, user_two_selection)
 # User ID cannot contain the following characters: !#$ or spaces
 # Password cannot be the word "password".
 # User password must contain at least one number.
+
+# puts "username"
+# userid = gets.chomp
+
+# puts "password"
+# password = gets.chomp
+
+# def login_info(userid, password)
+#   if userid == password 
+#     'userId and password cannot be the same'
+#   elsif userid.length < 6
+#     'userId must be longer than 6 characters'
+#   elsif password.length < 6
+#     'password must be longer than 6 characters'  
+#   elsif !password.include?('!, #, $') >= 1 
+#     'password must include at least 1 !, #, $'
+#   elsif userid.include?('!, #, $, " " ')
+#     'userId cannot include !, #, $ or spaces'
+#   elsif password.downcase == 'password'
+#     'Password cannot be the word "password"'
+#   elsif password.include?(integers)
+#   end
+# end
+
+# p login_info(userid, password)
+
+puts "username"
+userid = gets.chomp
+
+puts "password"
+password = gets.chomp
+
+def login_info(userid, password)
+  if userid == password 
+    return 'User ID and password cannot be the same.'
+  elsif userid.length < 6
+    return 'User ID must be at least 6 characters long.'
+  elsif password.length < 6
+    return 'Password must be at least 6 characters long.'  
+  elsif !(/[!#$]/.match?(password))
+    return 'Password must include at least one of !, #, $.'
+  elsif /[!#$\s]/.match?(userid)
+    return 'User ID cannot include !, #, $, or spaces.'
+  elsif password.downcase == 'password'
+    return 'Password cannot be the word "password".'
+  elsif password.match(/\d/).nil?
+    return 'Password must contain at least one number.'
+  else
+    return 'User ID and password are acceptable.'
+  end
+end
+
+puts login_info(userid, password)
