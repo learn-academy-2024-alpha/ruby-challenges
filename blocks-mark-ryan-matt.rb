@@ -80,15 +80,77 @@
 # p remainders(array_of_numbers)
 
 # 11. Create a method that will take in a range of letters and return an array with all the letters capitalized.
-letters = 'a'..'h'
+# letters = 'a'..'h'
 
-def capitalize_letters(string)
-    string.to_a.map(&:upcase)
-end
+# def capitalize_letters(string)
+#     string.to_a.map(&:upcase)
+# end
 
-p capitalize_letters(letters)
+# p capitalize_letters(letters)
 
 # 🏔 Stretch Goals
 # 12. FizzBuzz: Create a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
+
+# range = 1..100
+
+# def fizz_buzz (range)
+#    array = range.to_a
+#     array.map do |value|
+#         if value % 15 == 0 
+#             'Fizzbuzz'
+#         elsif value % 3 == 0
+#             'Fizz'
+#         elsif value % 5 == 0
+#             'Buzz'
+#         else value
+#         end
+#     end
+# end
+
+# p fizz_buzz(range)
+
 # 13. Create a method that takes in an array of words and returns all the words that start with a particular letter. Example: Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
+
+array_fruits = ['Apple', 'Avocado', 'Banana', 'Mango', 'Oranges', 'Blueberries']
+array_fruits2 = ['Kiwi', 'Avocado', 'Apple', 'blackberries', 'Oranges', 'rasberries']
+
+# def letter_finder (array, letter)
+#     array.select do |value|
+#     value = value[0]
+#     value.match(letter)
+#     end
+# end
+
+# def letter_finder(array, letter)
+#     array.select { |word| word.downcase.start_with?(letter.downcase) }
+# end
+
+
+# # def letter_finder (array, letter)
+# #     array.grep(/\b#{letter}\w*\b/i)
+# # end
+
+
+# p letter_finder(array_fruits, 'O')
+# p letter_finder(array_fruits2, 'a')
+
+
 # 14.Create a method that takes in an array of mixed data types and returns an array without any false, null, 0, or blank values.
+
+mixed_data_types = [false, 'string', 3, ' ', nil]
+
+# def data_finder (array)
+#     array.select do |elements|
+#         if elements.class == String 
+#             elements.strip!
+#         end 
+#         elements != false && elements != nil && elements != 0 && elements != ''
+#     end
+# end
+
+def data_finder (array)
+array.reject { |elem| elem.nil? || elem == false || elem == 0 || elem == " " }
+end
+
+p data_finder(mixed_data_types)
+
