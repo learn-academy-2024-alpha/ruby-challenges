@@ -148,6 +148,7 @@
 # end
 # p first_letter_filter fruits, first_letter
 
+
 # Create a method that takes in an array of mixed data types and returns an array without any false, null, 0, or blank values.
 
 mixed_data = [ false, nil, 0, 78, 34.9, 'string', true, '    ' ]
