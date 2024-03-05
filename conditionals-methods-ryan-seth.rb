@@ -46,15 +46,39 @@
 
 
 # ✂️ Challenge: Rock, Paper, Scissors
-# As the first user, I can see a prompt in the terminal to enter my name.
-# As the second user, I can see a prompt in the terminal to enter my name.
+# As the first user, I can see a prompt in the terminal to enter my name. ✅
+# As the second user, I can see a prompt in the terminal to enter my name. ✅
 # As the first user, I can see a prompt in the terminal asking me to type either "rock", "paper", or "scissors".
 # As the second user, I can see a prompt in the terminal asking me to type either "rock", "paper", or "scissors".
 # As a user, I can see a message in the terminal depicting which user won the round.
 # As a user, I can see a message in the terminal noting if there was a tie.
 
+puts 'enter player one user_name'
+user_one = gets.chomp
+# p user_one
 
+puts 'enter player two user_name'
+user_two = gets.chomp
+# p user_two
 
+puts "#{user_one} choose between rock, paper, or scissors"
+user_one_selection = gets.chomp
+
+puts "#{user_two} choose between rock, paper, or scissors"
+user_two_selection = gets.chomp
+
+def game_outcome (user_one, user_one_selection, user_two, user_two_selection)
+  if user_one_selection == user_two_selection
+    'tie game'
+  elsif user_one_selection == 'rock' && user_two_selection == 'scissors' ||
+      user_one_selection == 'scissors' && user_two_selection == 'paper' ||
+      user_one_selection == 'paper' && user_two_selection == 'rock'
+          "#{user_one}  wins"
+  else 
+      "#{user_two} wins"
+  end
+end 
+p game_outcome(user_one, user_one_selection, user_two, user_two_selection)
 
 # ✅ Challenge: Password Checker
 # As a developer, you have been tasked with creating the user registration for a secure web site. To test your code, enter the user ID and password in the terminal to find out if they are acceptable. The user ID and password must adhere to the to following criteria:
