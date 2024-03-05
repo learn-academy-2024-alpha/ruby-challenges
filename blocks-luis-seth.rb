@@ -55,7 +55,7 @@
 
 
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
-array = [1, 5, 3, 7, 20, 30]
+# array = [1, 5, 3, 7, 20, 30]
 
 # def odd array
 #     num_odd = array.select do |value|
@@ -91,17 +91,32 @@ array = [1, 5, 3, 7, 20, 30]
 # p remainder(array)
 
 # Create a method that will take in a range of letters and return an array with all the letters capitalized.
-letter_range = 'a'..'z'
+# letter_range = 'a'..'z'
 
-def char_up letter_range
-    cap_letter = letter_range.map(&:upcase)
-    p cap_letter
-end
-char_up(letter_range)
+# def char_up letter_range
+#     cap_letter = letter_range.map(&:upcase)
+#     p cap_letter
+# end
+# char_up(letter_range)
 
 # 🏔 Stretch Goals
 # FizzBuzz: Create a method that prints the numbers from 1 to 100. For multiples of three print Fizz instead of the number, for multiples of five print Buzz instead of the number, for numbers that are multiples of both three and five print FizzBuzz, for all other numbers print the number.
+numbers = 1..100
 
+def fizz_buzz numbers
+    numbers.each do |value|
+       if value % 3 == 0 && value % 5 == 0 
+        p 'fizzbuzz'
+            elsif value % 5 == 0
+                p 'buzz'
+            elsif value % 3 == 0
+                p 'fizz'
+            else  
+                p value
+        end
+    end
+end
+fizz_buzz(numbers)
 # Create a method that takes in an array of words and returns all the words that start with a particular letter. Example: Given the array ['Apple', 'Avocado', 'Banana', 'Mango'] and the letter 'a' the method should return ['Apple', 'Avocado']. With the same method, given the letter 'm' should return ['Mango'].
 
 # Create a method that takes in an array of mixed data types and returns an array without any false, null, 0, or blank values.
