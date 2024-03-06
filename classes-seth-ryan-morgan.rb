@@ -28,7 +28,7 @@ walk_dog = Task.new('walk-dog')
 # p dishes.get_title
 # p laundry.get_title
 # p walk_dog.get_title
-p dishes.update_status
+# p dishes.update_status
 
 
 
@@ -42,3 +42,35 @@ p dishes.update_status
 # As a developer, I can print the value of each individual color.
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
 # As a developer, I can change one or more colors of a given palette.
+
+class ColorPalette 
+  attr_accessor :color1, :color2, :color3
+  def initialize(color1, color2, color3)
+    @color1 = color1
+    @color2 = color2
+    @color3 = color3
+
+  
+  end
+  def all_colors 
+    " the first color is #{@color1}, the second color is #{@color2}, the third color is #{@color3}"
+
+  end
+end
+
+
+green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam')
+red = ColorPalette.new('rose', 'brick', 'watermelon')
+purple = ColorPalette.new('violet', 'lavender', 'periwinkle')
+ 
+# p green.color1
+# p red.color2
+# p purple.color3
+
+p green.all_colors
+p red.all_colors
+p purple.all_colors
+
+green.color1 = "lime"
+green.color2 = "black"
+p green.all_colors
