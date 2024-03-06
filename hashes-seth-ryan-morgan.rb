@@ -86,7 +86,7 @@ learn[:alpha] = 20
 learn[:bravo] = 21
 learn[:charlie] = 18
 learn[:delta] = 12
-learn[:echo] = 19
+learn[:echo] = 9
 learn[:foxtrot] = 10
 # p learn
 
@@ -105,7 +105,7 @@ def greater_than_20 learn_hash
 end
 # p greater_than_20 learn
 
-# Create the code that will iterate through the learn variable and return the sum of all the values. (Expected output: 100)
+# Create the code that will iterate through the learn variable and return the sum of all the values. (Expected output: 90)
 
 # def sum_it_up learn_hash
 #   acc = 0
@@ -143,18 +143,57 @@ end
 
 # Create a custom method that takes the learn variable as an argument and returns only the largest value from the hash. (Expected output: 21)
 
-def biggest_num learn_hash
-  # learn_hash.max_by { |k, v| v } 
-  biggest_num = 0
-  learn_hash.each do |k, v|
-    if v > biggest_num
-      biggest_num = v
-    end
-  end
-  biggest_num
-end
-p biggest_num learn
+# def biggest_num learn_hash
+#   # learn_hash.max_by { |k, v| v } 
+#   biggest_num = 0
+#   learn_hash.each do |k, v|
+#     if v > biggest_num
+#       biggest_num = v
+#     end
+#   end
+#   biggest_num
+# end
+# p biggest_num learn
 
 # Create a custom method that takes the learn variable as an argument and returns only the smallest value from the hash. (Expected output: 9)
+# def smallest_num learn_hash
+#   # learn_hash.max_by { |k, v| v } 
+#   smallest_num = 999
+#   learn_hash.each do |k, v|
+#     if v < smallest_num
+#       smallest_num = v
+#     end
+#   end
+#   smallest_num
+# end
+# p smallest_num learn
+
 # Create a custom method that takes the learn variable as an argument and returns an array of the values sorted from smallest to largest. (Expected output: [21, 20, 18, 12, 10, 9])
+
+
+# def sorted_array learn_hash
+#   smallest = learn_hash.map do |k, v|
+#     v
+#   end
+#   smallest.sort.reverse
+# end
+
+# p sorted_array learn
 # Create a custom method that takes the learn variable as an argument and returns a hash of only the key-value pairs where the key starts with a vowel.
+
+# learn[:alpha] = 20
+# learn[:bravo] = 21
+# learn[:charlie] = 18
+# learn[:delta] = 12
+# learn[:echo] = 9
+# learn[:foxtrot] = 10
+
+def vowel_hash learn_hash
+  vowels = 'aeiou'
+  learn_hash.select do |k, v|
+   vowels.include?(k[0])
+    
+  end 
+end
+
+p vowel_hash learn
