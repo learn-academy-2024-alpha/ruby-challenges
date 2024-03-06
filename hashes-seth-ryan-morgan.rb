@@ -72,3 +72,89 @@ my_info[:city] = 'san Diego'
 
 # my_info.delete(:age)
 # p my_info
+
+# Cohort Student Numbers
+
+# Create a variable called learn and assign it to an empty hash using the .new method. (Expected output: {})
+
+learn = Hash.new
+# p learn
+
+# Add the following key-value pairs one at a time to the learn variable: alpha: 20, bravo: 21, charlie: 18, delta: 12, echo: 9, foxtrot: 10
+
+learn[:alpha] = 20
+learn[:bravo] = 21
+learn[:charlie] = 18
+learn[:delta] = 12
+learn[:echo] = 19
+learn[:foxtrot] = 10
+# p learn
+
+# Create the code that will iterate through the learn variable and log each key and its corresponding value.
+
+# learn.each do |key, value|
+#   p "Key: #{key} Value: #{value}"
+# end
+
+# Create the code that will iterate through the learn variable and return a hash with only the values that are greater than or equal to 20.
+
+def greater_than_20 learn_hash
+  learn_hash.select do |key, value|
+    value >= 20
+  end
+end
+# p greater_than_20 learn
+
+# Create the code that will iterate through the learn variable and return the sum of all the values. (Expected output: 100)
+
+# def sum_it_up learn_hash
+#   acc = 0
+#   learn_hash.each do |k, v|
+#     acc += v
+#   end
+#   acc
+# end
+# p sum_it_up learn
+
+def sum_it_up learn_hash
+  learn_hash.sum do |k, v|
+    v
+  end
+end
+# p sum_it_up learn
+
+# Create a custom method that takes the learn variable as an argument and returns an array containing just the values from the hash.
+
+def return_arr_vals learn_hash
+  learn_hash.map do |k, v|
+    v
+  end
+end
+# p return_arr_vals learn
+
+# Create a custom method that takes the learn variable as an argument and returns an array containing just the keys from the hash.
+
+def return_arr_keys learn_hash
+  learn_hash.map do |k, v|
+    k.to_s
+  end
+end
+# p return_arr_keys learn
+
+# Create a custom method that takes the learn variable as an argument and returns only the largest value from the hash. (Expected output: 21)
+
+def biggest_num learn_hash
+  # learn_hash.max_by { |k, v| v } 
+  biggest_num = 0
+  learn_hash.each do |k, v|
+    if v > biggest_num
+      biggest_num = v
+    end
+  end
+  biggest_num
+end
+p biggest_num learn
+
+# Create a custom method that takes the learn variable as an argument and returns only the smallest value from the hash. (Expected output: 9)
+# Create a custom method that takes the learn variable as an argument and returns an array of the values sorted from smallest to largest. (Expected output: [21, 20, 18, 12, 10, 9])
+# Create a custom method that takes the learn variable as an argument and returns a hash of only the key-value pairs where the key starts with a vowel.
