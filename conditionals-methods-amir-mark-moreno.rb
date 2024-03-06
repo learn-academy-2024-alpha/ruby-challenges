@@ -84,14 +84,14 @@ player2 = gets.chomp
 
 # As a user, I can see a message in the terminal depicting which user won the round.
 def how_to_win(choice1, choice2)
-    if choice1 = "paper" > choice2 = "rock"
-        "#{paper} You win "
-    elsif choice1 = "rock" > choice2 = "scissors"
-        "#{rock} You win"
-    elsif choice1 = "scissors" > choice2 = "paper"
-        " scissors You win"
-    else
+    if choice1 == choice2
         "Tie"
+    elsif (choice1 == "paper" && choice2 == "rock") ||
+          (choice1 == "rock" && choice2 == "scissors") ||
+          (choice1 == "scissors" && choice2 == "paper")
+        "#{choice1.capitalize} wins!"
+    else
+        "#{choice2.capitalize} wins!"
     end
 end
 
