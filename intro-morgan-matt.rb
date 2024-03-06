@@ -25,30 +25,30 @@ Complete the following challenges in the IRB console.
   #3.2.0 :012 > 9.2 - 9.3
   => -0.10000000000000142 
   #3.2.0 :013 > 9.3 * 6.8
-  => 63.24 
+  => 63.24
   #3.2.0 :014 > 9.3 / 7.2
  => 1.2916666666666667
 
 4. Find the remainder of dividing two numbers using the modulo operator (%).
   #3.2.0 :015 > 5%2
-  => 1 
+  => 1
 
 5. Divide an integer by 0.
   #3.2.0 :016 > 5 / 0
    (irb):16:in `/': divided by 0 (ZeroDivisionError)
-          from (irb):16:in `<main>'                    
+          from (irb):16:in `<main>'
           from /Users/learnacademy/.rvm/rubies/ruby-3.2.0/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'
           from /Users/learnacademy/.rvm/rubies/ruby-3.2.0/bin/irb:25:in `load'
           from /Users/learnacademy/.rvm/rubies/ruby-3.2.0/bin/irb:25:in `<main>'
 
 6. Divide a float by 0.
   #3.2.0 :017 > 6.2/0
- => Infinity 
+ => Infinity
 
 7. Divide 0 by 0.
   #3.2.0 :018 > 0/0
 (irb):18:in `/': divided by 0 (ZeroDivisionError)
-        from (irb):18:in `<main>'              
+        from (irb):18:in `<main>'
         from /Users/learnacademy/.rvm/rubies/ruby-3.2.0/lib/ruby/gems/3.2.0/gems/irb-1.6.2/exe/irb:11:in `<top (required)>'
         from /Users/learnacademy/.rvm/rubies/ruby-3.2.0/bin/irb:25:in `load'
         from /Users/learnacademy/.rvm/rubies/ruby-3.2.0/bin/irb:25:in `<main>'
