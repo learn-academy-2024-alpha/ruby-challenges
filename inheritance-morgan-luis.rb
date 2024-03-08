@@ -1,9 +1,9 @@
 # Read all stories before starting the challenge.
 class Animal 
     attr_accessor :alive, :age
-    def initialize()
+    def initialize(age)
     @alive = true 
-    @age = 10
+    @age = age
     end
 
     def age_increment
@@ -20,14 +20,17 @@ class Animal
 end
 
 class Mammal < Animal
-    def initialize()
-        super()
+    attr_accessor :age
+    def initialize(age)
+        super(age)
         @warm_blooded = true
     end
 end
+
 class Bear < Mammal
-    def initialize()
-        super()
+    attr_accessor :age
+    def initialize(age)
+        super(age)
     end
     def bear_info 
         if @alive && @warm_blooded
@@ -46,9 +49,9 @@ end
 #  bear_test.bear_checker
 
 class Fox < Mammal
-    attr_accessor :color
-    def initialize(color)
-         super()
+    attr_accessor :color, :age
+    def initialize(color, age)
+         super(age)
         @color = color
     end
     def fox_info 
@@ -64,20 +67,22 @@ class Fox < Mammal
         end
     end 
 end
-fox_test = Fox.new("red")
-p fox_test.fox_checker
+# fox_test = Fox.new("red")
+# p fox_test.fox_checker
 
 class Fish < Animal
-    attr_accessor :cold_blooded 
-    def initialize()
-        super()
+    attr_accessor :cold_blooded, :age
+    def initialize(age)
+        super(age)
         @cold_blooded = true
     end
 end
+
+
 class Salmon < Fish
-    attr_accessor :species
-    def initialize(species)
-         super()
+    attr_accessor :species, :age
+    def initialize(species, age)
+         super(age)
         @species = species
     end
 
@@ -95,6 +100,8 @@ class Salmon < Fish
         end
     end 
 end
+
+
 # fish_test = Salmon.new("Atlantic")
 #     p fish_test.alive_checker
 # As a developer, I can make a generic Animal class.✅
@@ -125,9 +132,59 @@ end
 
 
 # 🏔 Stretch Goals
-# As a developer, I can keep a collection of two of each Animal.
-# Hint: You'll want to add your Animals into an array.
-# As a developer, I can sort my collection of Animals based on age.
-# Hint: Find out how the spaceship operator can help you with an array.
-# As a developer, I can utilize a Ruby module to help DRY up my code. I can create a swim method inside of my module that will apply to Animals who can swim. This method should return "I can swim!"
-# Hint: Look into module mix ins. Since not all animals can swim, only certain Animals will have access to this module.
+# As a developer, I can keep a collection of two of each Animal.✅
+salmon_1 = Salmon.new('Atlantic', '7')
+salmon_2 = Salmon.new('Sockeye', '6')
+# p salmon_1.age
+# p salmon_2.age
+bear_1 = Bear.new("5")
+bear_2 = Bear.new("4")
+# p bear_1.age
+# p bear_2.age
+fox_1 = Fox.new('red', '3')
+fox_2 = Fox.new('orange', '2')
+# p fox_1.age
+# p fox_2.age
+
+animal_arr = [ salmon_1.age, salmon_2.age, bear_1.age, bear_2.age, fox_1.age, fox_2.age ]
+# Hint: You'll want to add your Animals into an array.✅ 
+# As a developer, I can sort my collection of Animals based on age.✅ 
+# sorted_arr = arr.sort { |a, b| a <=> b }✅ 
+sorted_arr = animal_arr.sort { |a, b| a <=> b }
+# p sorted_arr
+# Hint: Find out how the spaceship operator can help you with an array.✅ 
+# As a developer, I can utilize a Ruby module to help DRY up my code. I can create a swim method inside of my module that will apply to Animals who can swim. This method should return "I can swim!"✅ 
+module Swimmable
+    def swim
+      "#{self.class} is swimming"
+    end
+end
+
+class Fish
+    include Swimmable
+end
+
+class Bear
+    include Swimmable
+end
+
+swimming_bear = Bear.new("5")
+# p swimming_bear.swim
+
+salmon_swimming = Salmon.new('Sockeye', '6')
+# p salmon_swimming.swim
+
+# Hint: Look into module mix ins. Since not all animals can swim, only certain Animals will have access to this module.✅ 
+
+module NonSwimmable
+    def cant_swim
+      "#{self.class} can't swim"
+    end
+end
+
+class Fox
+    include NonSwimmable
+end
+
+fox_no_swim = Fox.new('red', '3')
+p fox_no_swim.cant_swim
