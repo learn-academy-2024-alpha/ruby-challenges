@@ -217,13 +217,15 @@ sockeye.age_multiplier
 sockeye.age_increase
 
 
-    p collection_animals
+    # p collection_animals
 
-   sorted_animals = collection_animals.map do |animal| 
-        animal.age.sort{ |a, b| a <=> b}
-    end
-    p sorted_animals
+#    sorted_animals = collection_animals.map do |animal| 
+#         animal.age.sort{ |a, b| a <=> b}
+#     end
+#     p sorted_animals
 
-    # collection_animals.sort_by{ |a, b| a <=> b}
+   sorted_animals = collection_animals.sort_by(&:age)
+
+   p sorted_animals
 
 
