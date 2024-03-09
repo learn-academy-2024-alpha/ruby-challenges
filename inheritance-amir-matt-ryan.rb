@@ -87,8 +87,16 @@ class Mammal < Animal
          if @alive 
             "Let's give it up for the newest player in the game!"
          else 
-            "It's kicked the bucket, it's kaput, it's dead as a doornail! RIP to our furry friend."
+            "It's kicked the bucket, it's kaput, it's dead as a doornail! RIP to our furry friend"
          end
+    end
+
+    def mammal_info 
+        if @alive
+            "this #{animal_name} is rocking and living he is #{age} years old. and he is #{warm_blooded}"
+        else
+            "this #{animal_name} at the age of #{age}.It's kicked the bucket, it's kaput, it's dead as a doornail! RIP to our furry friend he is no longer #{warm_blooded}"
+        end
     end
 end
 
@@ -103,12 +111,12 @@ class Bear < Mammal
         if @age >= 20
             dead
             "Yo, listen up! So, check it out. At 20 years young, this #{species} #{animal_name}, man, he's kicked the bucket, but let me tell you, he lived his life like a boss! Full throttle, no regrets, just straight-up livin' it large!"
-        elsif @age <= 19
-                "Im old bear with me"
+        elsif @age <= 5
+                "Cublife"
         elsif @age <= 10
             "furlife Crisis"
-        elsif @age <=5
-            "Cublife"
+        elsif @age <=19
+            "Im old bear with me"
         else
             "the age of this bear is tooo damn young"
         end
@@ -119,10 +127,103 @@ class Bear < Mammal
     end
 
     def bear_info 
-        "Check it out, folks! This #{species} #{animal_name}'s fresh on the scene, age: #{age}. {warm_blooded} and living large! #{is_alive}"
+        if age < 20
+        "Check it out, folks! This #{species} #{animal_name}'s fresh on the scene, age: #{age}. #{warm_blooded} and living large! #{is_alive}"
+        elsif age >= 20
+        "Yo, listen up! So, check it out. At #{age} years young, this #{warm_blooded} #{species} #{animal_name}, man, #{is_alive}, but let me tell you, he lived his life like a boss! Full throttle, no regrets, just straight-up livin' it large!"
+        end
     end
 end
 
+=begin
 brown = Bear.new("Brown")
 p brown.bear_info
+p brown
+p brown.age_multiplier
+p brown
+p brown.old_age
+p brown.age_multiplier
+p brown.old_age
+p brown.age_multiplier
+p brown.old_age
+p brown.age_multiplier
+p brown
+# p brown.old_age
+p brown.bear_info
+=end
+
+
+platypus = Mammal.new("platypus")
+# p platypus
+# p platypus.age_increase
+# p platypus
+
+badger = Mammal.new("Badger")
+# p badger
+# p badger.dead
+# p badger
+# p badger.mammal_info
+# p badger.dead
+# p badger.mammal_info
+
+
+prairiedog = Mammal.new("prairiedog")
+# p prairiedog
+# p prairiedog.age_increase
+# p prairiedog
+# p prairiedog.dead
+# p prairiedog.mammal_info
+
+
+# p prairiedog.age_increase
+# p prairiedog.age_increase
+# p prairiedog.age_increase
+
+
+
+# brown = Bear.new("Brown")
+# black = Bear.new("Black")
+# atlantic = Salmon.new("Atlantic")
+# sockeye = Salmon.new("Sockeye")
+
+# animal_collection = { warm_blooded_species: Bear, cold_blooded_species: Salmon} 
+
+# animal_collection[:warm_blooded_species] = [brown, black]
+# animal_collection[:cold_blooded_species] = [atlantic, sockeye]
+
+# brown.age_multiplier
+# black.age_multiplier
+# black.age_increase
+# atlantic.age_multiplier
+# sockeye.age_multiplier
+# sockeye.age_increase
+
+# p animal_collection
+
+
+
+collection_animals = [ 
+   brown = Bear.new('brown'),
+   black = Bear.new('black'),
+   sockeye = Salmon.new('sockeye'),
+   atlantic = Salmon.new('atlantic')
+]
+
+brown.age_multiplier
+black.age_multiplier
+black.age_increase
+atlantic.age_multiplier
+sockeye.age_multiplier
+sockeye.age_increase
+
+
+    p collection_animals
+
+   sorted_animals = collection_animals.map do |animal| 
+        animal.age.sort{ |a, b| a <=> b}
+    end
+    p sorted_animals
+
+    # collection_animals.sort_by{ |a, b| a <=> b}
+
 
