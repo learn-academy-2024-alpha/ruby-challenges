@@ -1,36 +1,37 @@
 # ❤️ Challenges
 # 1. Create a loop that prints the numbers 1 to 20.
-# range = 1..20 
-# range.each {|value| p value}
+range = 1..20
+range.each {|value| p value}
 
 # 2. Create a loop that prints the numbers 1 to 20 using a different approach than previously used.
-# range.each do |value|
-#   p value
-# end
+range.each do |value|
+  p value
+end
 
 # 3. Create a loop that prints only even numbers from 20 to 0.
 
-# 20.downto(0) do  |value|
-#    if value.even?
-#     p value
-#    end
-# end
+20.downto(0) do  |value|
+   if value.even?
+    p value
+   end
+end
 
 # 4. Create a method that takes in an array of numbers and returns a new array with all the numbers multiplied by 5.
-# array1 = (1..5).to_a
-# def multiply_by_5 array
-#   array.map { |value|  value * 5 }
-# end
+array1 = (1..5).to_a
+def multiply_by_5 array
+  array.map { |value|  value * 5 }
+end
 
-# p multiply_by_5 (array1)
+p multiply_by_5(array1)
 
 
 # 5. Create a method that takes in an array of lowercase words and capitalizes all of the words, permanently modifying the original array.
-# array_of_names = ['mark', 'ryan', 'matt']
-# def capitalize array
-#   array.map(&:capitalize)
-# end
-# p capitalize array_of_names
+array_of_names = ['mark', 'ryan', 'matt']
+def capitalize array
+  array.map(&:capitalize)
+end
+p capitalize array_of_names
+
 #6.  Create a method that takes in an array of numbers and returns the largest number in the array.
 # array_of_numbers = [1, 2, 3, 4, 5, 10, 7, 8, 9, 6]
 # def largest_number array
@@ -40,13 +41,13 @@
 
 
 # 7. Create a method that takes in an array of words and returns the word with the least number of characters.
-# array_of_names = ['anthony', 'lemus', 'barnabo']
+array_of_names = ['anthony', 'lemus', 'barnabo']
 
-# def smallest_word array
-#     array.min {|a, b| a.length <=> b.length}
-# end
+def smallest_word array
+    array.min {|a, b| a.length <=> b.length}
+end
 
-# p smallest_word array_of_names
+p smallest_word array_of_names
 
 
 
@@ -148,9 +149,8 @@ mixed_data_types = [false, 'string', 3, ' ', nil]
 #     end
 # end
 
-def data_finder (array)
-array.reject { |elem| elem.nil? || elem == false || elem == 0 || elem == " " }
+def data_finder(array)
+array.reject { |elem| elem.nil? || elem == false || elem == 0 || elem == ' ' }
 end
 
 p data_finder(mixed_data_types)
-
