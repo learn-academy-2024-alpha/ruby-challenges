@@ -69,21 +69,20 @@ describe 'Tasks_list' do
     @task_list.adds_tasks fold
     expect(@task_list.list).to_not be_empty
     expect(@task_list.list).to contain_exactly(laundry, dishes, sweep, fold)
-    p task_list
-    
   end
 
   it 'I can print the completed items' do
-    mark_complete = @in_progress = false
     laundry = @task
     dishes = @task
 
     @task_list.adds_tasks laundry
     @task_list.adds_tasks dishes
-
+    laundry.mark_complete
+    dishes.mark_complete
     expect(@task_list.list).to contain_exactly(laundry, dishes)
-    expect(@task_list.list).to be false
+    expect(@task_list.list).to match(/#{@title} is complete/) 
   end
 
 end
+
 

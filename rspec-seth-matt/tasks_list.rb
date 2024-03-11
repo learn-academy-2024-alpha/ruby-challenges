@@ -6,7 +6,7 @@ class Tasks_list
     end
 
     def adds_tasks (task)
-        @list = task.push
+        @list << task
     end
 end
 
