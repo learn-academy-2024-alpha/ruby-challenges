@@ -6,7 +6,7 @@ class Task
     @title = title
     @description = description
     @status = 'in progress'
-    @date = Date.today
+    @date = nil
   end
 
   def task_complete 

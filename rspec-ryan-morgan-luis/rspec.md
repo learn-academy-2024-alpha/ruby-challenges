@@ -20,10 +20,10 @@
 
 # As a developer with a TaskList, I can print the completed items.💰
 
-# As a developer with a TaskList, I can print the incomplete items.
+# As a developer with a TaskList, I can print the incomplete items.💰
 
-# As a developer with a TaskList, I can list all the not completed items that are due today.
+# As a developer with a TaskList, I can list all the not completed items that are due today.💰
 
-# As a developer with a TaskList, I can list all the incomplete items in order of due date.
+# As a developer with a TaskList, I can list all the incomplete items in order of due date.💰
 
 # As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
