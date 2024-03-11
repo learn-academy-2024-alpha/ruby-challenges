@@ -15,3 +15,20 @@ class Task
         @completion_date = Date.today
     end
 end
+
+    class TaskList 
+        def initialize()
+            @tasks = []
+        end
+        def add_task 
+            @tasks << task
+        end
+        def completed_items
+        @tasks.select {|task| task.status == 'done'}
+        end
+    end
+      def incompleted_items
+      @tasks.select {|task| task.status == nil}
+      end
+  end
+    

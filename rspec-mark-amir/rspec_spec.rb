@@ -1,6 +1,6 @@
 require 'rspec'
 require_relative 'rspec'
-
+require_relative 'task'
 
 
 
@@ -38,4 +38,19 @@ describe Task do
         expect(task.completion_date).to be_nil
     end
 
-end
+   
+
+    describe TaskList do
+      let(:task1) { Task.new('Task 1', 'Description 1', Date.today) }
+      it 'can print the completed items.' do
+        task_list = TaskList.new
+      task_list.add_task(task1)
+      expect(task_list.completed_items).to eq([])  
+      end
+    end    
+
+
+
+
+
+
