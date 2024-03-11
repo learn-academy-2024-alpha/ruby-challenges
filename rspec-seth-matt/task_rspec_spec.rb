@@ -1,6 +1,7 @@
 require 'rspec'
 require 'date'
 require_relative 'task'
+require_relative 'tasks_list'
 
 describe 'Task' do
   before(:each) do 
@@ -43,7 +44,46 @@ describe 'Task' do
 end
 
 
+describe 'Tasks_list' do
+  before(:each) do
+    @task_list = Tasks_list.new
+  end
 
+  it 'can create a task list' do
+    expect{@task_list}.to_not raise_error
+  end
 
+  it 'adds an empty task list array' do
+    expect(@task_list.list).to be_a Array 
+  end
 
+  it 'adds tasks to tasks list' do
+    laundry = @task
+    dishes = @task
+    sweep = @task
+    fold = @task
+
+    @task_list.adds_tasks laundry
+    @task_list.adds_tasks dishes
+    @task_list.adds_tasks sweep
+    @task_list.adds_tasks fold
+    expect(@task_list.list).to_not be_empty
+    expect(@task_list.list).to contain_exactly(laundry, dishes, sweep, fold)
+    p task_list
+    
+  end
+
+  it 'I can print the completed items' do
+    mark_complete = @in_progress = false
+    laundry = @task
+    dishes = @task
+
+    @task_list.adds_tasks laundry
+    @task_list.adds_tasks dishes
+
+    expect(@task_list.list).to contain_exactly(laundry, dishes)
+    expect(@task_list.list).to be false
+  end
+
+end
 
